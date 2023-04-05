@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:15.2-alpine
+    container_name: sns_online_store_postres
+    environment:
+      POSTGRES_DB: sns_online_store
+      POSTGRES_USER: shakalyan
+      POSTGRES_PASSWORD: pgrsS0Sshak
+    volumes:
+      - ./postgres_dump.sql:/docker-entrypoint-initdb.d/db_init.sql
+      - ./postgres_data:/var/lib/postgresql/data
+    ports:
+      - '127.0.0.1:30000:5432'
+
+  mongo:
+    image: mongo:6.0
+    container_name: sns_online_store_mongo
+    environment:
+      MONGO_INITDB_DATABASE: sns_online_store
+      MONGO_INITDB_USERNAME: admin
+      MONGO_INITDB_PASSWORD: admSN0S
+    volumes:
+      - ./mongorestore.sh:/docker-entrypoint-initdb.d/mongorestore.sh
+      - ./dump:/dump
+      - ./mongo_data:/data/db
+    ports:
+      - '127.0.0.1:30001:27017'

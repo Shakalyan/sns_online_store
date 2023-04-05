@@ -27,8 +27,8 @@ public class WebSecurityConf {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
             .authorizeHttpRequests()
-                .anyRequest().authenticated()
-                .and()
+            .anyRequest().authenticated()
+            .and()
             .httpBasic().and()
             .sessionManagement().disable();
         return http.build();
