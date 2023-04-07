@@ -5,16 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
-public class ProductRepository {
+public class ProductRepository extends AbstractMongoRepository<Product> {
 
     @Autowired
-    MongoTemplate mongoTemplate;
-
-    public List<Product> getAllProducts() {
-        return mongoTemplate.findAll(Product.class);
+    public ProductRepository(MongoTemplate mongoTemplate) {
+        super(mongoTemplate, Product.class);
     }
 
 }

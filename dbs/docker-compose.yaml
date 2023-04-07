@@ -19,11 +19,10 @@ services:
     container_name: sns_online_store_mongo
     environment:
       MONGO_INITDB_DATABASE: sns_online_store
-      MONGO_INITDB_USERNAME: admin
-      MONGO_INITDB_PASSWORD: admSN0S
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admSN0S
     volumes:
-      - ./mongorestore.sh:/docker-entrypoint-initdb.d/mongorestore.sh
-      - ./dump:/dump
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
       - ./mongo_data:/data/db
     ports:
       - '127.0.0.1:30001:27017'

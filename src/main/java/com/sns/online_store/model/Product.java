@@ -1,20 +1,14 @@
 package com.sns.online_store.model;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.bson.types.ObjectId;
-import org.springframework.data.mongodb.core.mapping.Field;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Product {
-
-    ObjectId id;
+public class Product extends AbstractMongoDocument {
 
     String name;
 
@@ -24,7 +18,6 @@ public class Product {
 
     String manufacturer;
 
-    @Field("category")
-    ObjectId categoryId;
+    String category;
 
 }
