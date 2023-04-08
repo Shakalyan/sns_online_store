@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style/authorization.css">
+    <title>Authorization</title>
+</head>
+<body>
+    <form class="authorization-background">
+        <div id="auth_div">
+            <legend>Sign In Store SNS</legend>
+            <p><label for="name" id="auth_login">Login</label></p>
+            <input type="name">
+            <p><label for="password" id="auth_password">Password</label></p>
+            <input type="password">
+            <h1 id="auth_error"></h1>
+            <p>
+            <button type="button">Sign In</button>
+            <button type="button" id="auth_to_reg_button">Sign Up</button>
+            </p>
+        </div>
+        
+        <div id="reg_div" hidden>
+            <legend>Sign up in SNS</legend>
+            <p>Login</p>
+            <input id="reg_login" type="text">
+            <p>Email</p>
+            <input id="reg_email" type="text">
+            <p>Phone number</p>
+            <input id="reg_phone" type="text">
+            <p>Password</p>
+            <input id="reg_password" type="password">
+            <p>Repeat password</p>
+            <input id="reg_rep_password" type="password">
+            <h1 id="reg_error"></h1>
+            <p>
+            <button id="reg_submit_button" type="submit">Sign up</button>
+            <button id="reg_to_back_button" type="submit">Back</button>
+            </p>
+        </div>
+        <script type="module" src="../scripts/authorization.js"></script>
+    </form>
+</body>
+</html>
