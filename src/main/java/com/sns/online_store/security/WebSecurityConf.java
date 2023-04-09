@@ -26,11 +26,19 @@ public class WebSecurityConf {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
-            .authorizeHttpRequests()
-            .anyRequest().authenticated()
+                .authorizeHttpRequests()
+                .requestMatchers("/auth/login/**").permitAll()
+                .anyRequest().authenticated()
             .and()
-            .httpBasic().and()
-            .sessionManagement().disable();
+                .formLogin()
+                .loginPage("/auth/login")
+                .defaultSuccessUrl("/")
+                .permitAll()
+            .and()
+                .logout()
+                .logoutUrl("/auth/logout")
+                .logoutSuccessUrl("/auth/login?logout")
+                .invalidateHttpSession(true);
         return http.build();
     }
 
