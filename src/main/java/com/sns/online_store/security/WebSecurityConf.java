@@ -31,6 +31,8 @@ public class WebSecurityConf {
                 .requestMatchers("/swagger-ui.html").permitAll()
                 .requestMatchers("/swagger-ui/**").permitAll()
                 .requestMatchers("/v3/api-docs/**").permitAll()
+                .requestMatchers("/style/**").permitAll()
+                .requestMatchers("/scripts/**").permitAll()
                 .anyRequest().authenticated()
             .and()
                 .formLogin()
