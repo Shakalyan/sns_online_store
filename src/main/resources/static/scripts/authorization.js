@@ -1,9 +1,5 @@
 const authView = {
     card: document.querySelector("#auth_div"),
-    loginField: document.querySelector("#auth_login"),
-    passwordField: document.querySelector("#auth_password"),
-    errorField: document.querySelector("#auth_error"),
-    submitButton: document.querySelector("#auth_submit_button"),
     toRegButton: document.querySelector("#auth_to_reg_button")
 };
 
@@ -13,24 +9,11 @@ const regView = {
     emailField: document.querySelector("#reg_email"),
     phoneField: document.querySelector("#reg_phone"),
     passwordField: document.querySelector("#reg_password"),
-    repPasswordField: document.querySelectot("reg_rep_password"),
-    submitButton: document.querySelector("reg_submit_button"),
+    repPasswordField: document.querySelector("#reg_rep_password"),
+    submitButton: document.querySelector("#reg_submit_button"),
     toBackButton: document.querySelector("#reg_to_back_button")
 };
 
-authView.submitButton.addEventListener("click", function() {
-    let user = userDto(authView.loginField.value, authView.passwordField.value);
-    //хз че вставлять
-    sendJSONQuery(url, "POST", user).then((response) => {
-        if (response.status === 200) {
-            authView.errorField.textContent = "OK";
-        } else {
-            response.text().then((text) => {
-                authView.errorField.textContent = text;
-            })
-        }
-    })
-})
 
 authView.toRegButton.addEventListener("click", function() {
     document.getElementById(authView.card.id).hidden = true;
@@ -61,11 +44,6 @@ regView.toBackButton.addEventListener("click", function(){
     document.getElementById(regView.card.id).hidden = true;
     console.log("do that");
 });
-
-function userDto(username, password) {
-    this.username = username;
-    this.password = password; 
-}
 
 function regDto(username, password, email, phone) {
     this.username = username;
