@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../style/authorization.css">
+    <link th:href="@{/style/authorization.css}" rel="stylesheet"/>
     <title>Authorization</title>
 </head>
 <body>
     <form class="authorization-background" method="post">
         <div id="auth_div">
             <legend>Sign In Store SNS</legend>
-            <p><label for="name" id="auth_login" name="username">Login</label></p>
-            <input type="name">
-            <p><label for="password" id="auth_password" name="password">Password</label></p>
-            <input type="password">
-            <h1 id="auth_error"></h1>
+            <p><label for="input_username" id="auth_login">Login</label></p>
+            <input type="text" id="input_username" name="username">
+            <p><label for="input_password" id="auth_password">Password</label></p>
+            <input type="password" id="input_password" name="password">
+            <div th:if="${param.error}" hidden>
+                <p id="auth_error">ERROR!</p>
+            </div>
             <p>
-            <button type="button">Sign In</button>
+            <button type="submit">Sign In</button>
             <button type="button" id="auth_to_reg_button">Sign Up</button>
             </p>
-            <div th:if="${param.error}}">
-                <h1>ERROR!</h1>
-            </div>
 
         </div>
         
@@ -41,11 +40,8 @@
             <button id="reg_submit_button" type="submit">Sign up</button>
             <button id="reg_to_back_button" type="submit">Back</button>
             </p>
-            <div th:if="${param.error}}">
-                <h1>ERROR!</h1>
-            </div>
         </div>
-        <script type="module" src="../scripts/authorization.js"></script>
+        <script th:src="@{/scripts/authorization.js}"></script>
     </form>
 </body>
 </html>
