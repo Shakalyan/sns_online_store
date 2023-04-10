@@ -17,6 +17,7 @@ public class AccountService {
 
     private final EmployeeRepository employeeRepository;
     private final PasswordEncoder passwordEncoder;
+    private final RoleFactory roleFactory;
 
     public void register(RegistrationRequest request) throws ApiException {
         Optional<Employee> employee = employeeRepository.findByUsername(request.getUsername());
@@ -30,7 +31,7 @@ public class AccountService {
                                              request.getName(),
                                              request.getEmail(),
                                              request.getPhoneNumber(),
-                                             request.getRole()));
+                                             roleFactory.getRolesOf(request.getRole())));
     }
 
 }
