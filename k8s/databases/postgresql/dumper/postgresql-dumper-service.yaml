@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgresql-dumper-service
+  labels:
+    app: postgresql-dumper
+spec:
+  type: ClusterIP
+  clusterIP: None
+  selector:
+    app: postgresql-dumper
+  

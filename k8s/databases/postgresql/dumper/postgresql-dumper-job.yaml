@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-job
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: dumper
+            image: shakalyan/cronjob:0.1
+            env:
+            - name: HOST
+              value: "postgresql-stateful-set-0.postgresql-service"
+            - name: DATABASE
+              value: "sns_online_store"
+            - name: USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: username
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-secret
+                  key: password
+            - name: DUMPS_PATH
+              value: "/dumps"
+            - name: REPLICA_HOSTS
+              value: "postgresql-dumps-container-0.postgresql-dumper-service,postgresql-dumps-container-1.postgresql-dumper-service,postgresql-dumps-container-2.postgresql-dumper-service"        
+            command: ["/bin/sh", "-c"]
+            args: ["python makedump.py"]
+          restartPolicy: OnFailure
