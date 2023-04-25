@@ -18,4 +18,9 @@ public class ViewController {
         return "main";
     }
 
+    @GetMapping("/auth/registration")
+    public String registration() {
+        return "registration";
+    }
+
 }
