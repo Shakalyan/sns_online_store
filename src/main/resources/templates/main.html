@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/style/main.css}" type="text/css">
+    <title>SNS Store</title>
 </head>
 <body>
-  <p>Хорошая работа, Бадма, ты молодец</p>
+  <form class="background">
+    <div class="static_front">
+      <div id="main_panel">
+        <h1 id="appName">SNS Store</h1>
+        <h2 id="role" sec:authorize="hasRole('ROLE_ADMIN')">Должность: Админ</h2>
+        <h2 id="role" sec:authorize="hasRole('ROLE_MANAGER')">Должность: Менеджер</h2>
+        <h2 id="role" sec:authorize="hasRole('ROLE_DEV')">Должность: Разработчик</h2>
+      </div>
+      <div id="panel">
+        <button type="button" id="buttonProducts"><h2>Товары</h2></button>
+        <button type="button" id="buttonEmployee"><h2>Сотрудники</h2></button>
+      </div>
+    </div>
+    <div id="list_products">
+      <div id="panel_products">
+        <h3 id="name_product">Название</h3>
+        <h3 id="category">Категория</h3>
+        <h3 id="price">Цена</h3>
+        <h3 id="amount">Количество</h3>
+      </div>
+      <div id="products">
+
+      </div>
+    </div>
+    <div id="list_employee" hidden>
+      <div id="panel_employee">
+        <h3 id="name_employee">ФИО</h3>
+        <h3 id="post_employee">Должность</h3>
+        <button type="button" id="add_employee"><h3>Добавить</h3></button>
+        <button type="button" id="delete_employee"><h3>Удалить</button>
+      </div>
+    </div>
+    <script th:src="@{/scripts/main.js}"></script>
+  </form>
 </body>
 </html>

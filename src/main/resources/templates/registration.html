@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/style/authorization.css}" rel="stylesheet"/>
+    <title>Authorization</title>
+</head>
+<body>
+    <form class="authorization-background" method="post">
+        <div id="reg_div">
+            <legend>Sign up in SNS</legend>
+            <p>Login</p>
+            <input id="reg_login" type="text" name="username">
+            <p>Email</p>
+            <input id="reg_email" type="text" name="email">
+            <p>Phone number</p>
+            <input id="reg_phone" type="text" name="phone">
+            <p>Password</p>
+            <input id="reg_password" type="password" name="password">
+            <p>Repeat password</p>
+            <input id="reg_rep_password" type="password" name="passwordRep">
+            <h1 id="reg_error"></h1>
+            <p>
+            <button id="reg_submit_button" type="submit">Sign up</button>
+            <button id="reg_to_back_button" type="button">Back</button>
+            </p>
+        </div>
+        <script th:src="@{/scripts/authorization.js}"></script>
+    </form>
+</body>
+</html>

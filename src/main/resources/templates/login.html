@@ -13,35 +13,13 @@
             <input type="text" id="input_username" name="username">
             <p><label for="input_password" id="auth_password">Password</label></p>
             <input type="password" id="input_password" name="password">
-            <div th:if="${param.error}" hidden>
+            <div th:if="${param.error}">
                 <p id="auth_error">ERROR!</p>
             </div>
             <p>
             <button type="submit">Sign In</button>
-            <button type="button" id="auth_to_reg_button">Sign Up</button>
-            </p>
-
-        </div>
-        
-        <div id="reg_div" hidden    >
-            <legend>Sign up in SNS</legend>
-            <p>Login</p>
-            <input id="reg_login" type="text" name="username">
-            <p>Email</p>
-            <input id="reg_email" type="text" name="email">
-            <p>Phone number</p>
-            <input id="reg_phone" type="text" name="phone">
-            <p>Password</p>
-            <input id="reg_password" type="password" name="password">
-            <p>Repeat password</p>
-            <input id="reg_rep_password" type="password" name="passwordRep">
-            <h1 id="reg_error"></h1>
-            <p>
-            <button id="reg_submit_button" type="submit">Sign up</button>
-            <button id="reg_to_back_button" type="submit">Back</button>
             </p>
         </div>
-        <script th:src="@{/scripts/authorization.js}"></script>
     </form>
 </body>
 </html>

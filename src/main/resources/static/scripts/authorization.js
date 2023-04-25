@@ -1,8 +1,3 @@
-const authView = {
-    card: document.querySelector("#auth_div"),
-    toRegButton: document.querySelector("#auth_to_reg_button")
-};
-
 const regView = {
     card: document.querySelector("#reg_div"),
     loginField: document.querySelector("#reg_login"),
@@ -13,13 +8,6 @@ const regView = {
     submitButton: document.querySelector("#reg_submit_button"),
     toBackButton: document.querySelector("#reg_to_back_button")
 };
-
-
-authView.toRegButton.addEventListener("click", function() {
-    document.getElementById(authView.card.id).hidden = true;
-    document.getElementById(regView.card.id).hidden = false;
-    console.log("do that");
-});
 
 regView.submitButton.addEventListener("click", function() {
     let user = regDto(regView.loginField.value, regView.passwordField.value, 
@@ -40,9 +28,7 @@ regView.submitButton.addEventListener("click", function() {
 })
 
 regView.toBackButton.addEventListener("click", function(){
-    document.getElementById(authView.card.id).hidden = false;
-    document.getElementById(regView.card.id).hidden = true;
-    console.log("do that");
+    window.location.replace("../templates/main.html");
 });
 
 function regDto(username, password, email, phone) {

@@ -1,0 +1,80 @@
+.background {
+    background: linear-gradient(purple, black);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+body, button {
+    color: rgb(238, 238, 238);
+}
+#buttonProducts, #buttonEmployee {
+    background-color: rgb(88, 0, 88);
+    border-radius: 5px;
+    border-width: 0px;
+    padding: 10px;
+}
+#buttonProducts:hover, #buttonEmployee:hover {
+    background-color: rgb(151, 81, 151);
+}
+#buttonProducts:active, #buttonEmployee:active {
+    background-color: rgb(94, 52, 94);
+}
+#appName, #role {
+    display: inline-block;
+
+}
+#role {
+    margin-left: 75%  
+}
+#appName {
+    margin-left: 5%;
+}
+#panel {
+    background-color: rgb(88, 0, 88);
+    border-style: outset;
+    border-color: aliceblue;
+    border-width: 1px;
+}
+#list_products, #list_employee {
+    background-color: rgb(71, 29, 71);
+    margin: 0 auto;
+    width: 78%;
+    height: 80%;
+    margin-left: 11%;
+} 
+#panel_products {
+    background-color: rgb(87, 0, 87);
+    border-style: outset;
+    border-color: aliceblue;
+    border-width: 1px;
+    height: 5%;
+}
+#panel_products * {
+    display: inline;
+    padding: 9%
+}
+#name_employee, #post_employee {
+    display: inline;
+    padding: 18%;
+} 
+#panel_employee {
+    background-color: rgb(87, 0, 87);
+    border-style: outset;
+    border-color: aliceblue;
+    border-width: 1px;
+}
+#add_employee, #delete_employee {
+    background-color: rgb(88, 0, 88);
+    border-radius: 5px;
+    border-width: 0px;
+    padding:5px;
+    margin-right: 0px;
+}
+#add_employee:hover, #delete_employee:hover {
+    background-color: rgb(151, 81, 151);
+}
+#add_employee:active, #delete_employee:active {
+    background-color: rgb(94, 52, 94);
+}
