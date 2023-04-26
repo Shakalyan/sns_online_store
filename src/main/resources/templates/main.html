@@ -7,6 +7,25 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <title>SNS Store</title>
 </head>
 <body>
+  <dialog id="addProduct" close>
+    <legend>Products</legend>
+    <p>Название</p>
+    <input id="nameProduct" type="text">
+    <p>Производитель</p>
+    <input id="manufacturerProduct" type="text">
+    <p>Категория</p>
+    <input id="category" type="text">
+    <p>Цена</p>
+    <input id="priceProduct" type="text">
+    <p>Количество</p>
+    <input id="amountProduct" type="text">
+    <br>
+    <h1 id="reg_error"></h1>
+    <p>
+    <button id="addButtonProduct" type="submit">Добавить</button>
+    <button id="deleteButtonProduct" type="button">Удалить</button>
+    </p>
+  </dialog>
   <form class="background">
     <div class="static_front">
       <div id="main_panel">
@@ -26,9 +45,9 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
         <h3 id="category">Категория</h3>
         <h3 id="price">Цена</h3>
         <h3 id="amount">Количество</h3>
+        <button id="btnAddProduct" type="button" onclick="window.addProduct.showModal();">+</button>
       </div>
       <div id="products">
-
       </div>
     </div>
     <div id="list_employee" hidden>

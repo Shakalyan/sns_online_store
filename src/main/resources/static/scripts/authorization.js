@@ -5,18 +5,19 @@ const regView = {
     phoneField: document.querySelector("#reg_phone"),
     passwordField: document.querySelector("#reg_password"),
     repPasswordField: document.querySelector("#reg_rep_password"),
+    selectedRole: document.querySelector("#selectRole"),
     submitButton: document.querySelector("#reg_submit_button"),
     toBackButton: document.querySelector("#reg_to_back_button")
 };
 
 regView.submitButton.addEventListener("click", function() {
     let user = regDto(regView.loginField.value, regView.passwordField.value, 
-        regView.emailField.value, regView.phoneField.value);
+        regView.emailField.value, regView.phoneField.value, regView.selectedRole.value);
     if (regView.passwordField.value != regView.repPasswordField.value) {
         regView.errorField.textContent = "Passwords do not match";
         return
     }
-    sendJSONQuery(url, "POST", user).then((response) => {
+    sendJSONQuery("localhost:8080/api/auth/registration", "POST", user).then((response) => {
         if (response.status === 200) {
             regView.errorField.textContent = "OK";
         } else {
@@ -28,14 +29,15 @@ regView.submitButton.addEventListener("click", function() {
 })
 
 regView.toBackButton.addEventListener("click", function(){
-    window.location.replace("../templates/main.html");
+    window.location.replace("/");
 });
 
-function regDto(username, password, email, phone) {
+function regDto(username, password, email, phone, role) {
     this.username = username;
     this.password = password;
     this.email = email;
     this.phone = phone;
+    this.role = role;
 }
 
 async function sendJSONQuery(url, method, data) {

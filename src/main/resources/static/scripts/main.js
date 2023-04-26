@@ -24,3 +24,4 @@ listenerAllButton.buttonProducts.addEventListener("click", function() {
 listenerAllButton.addEmployee.addEventListener("click", function() {
     window.location.replace("auth/registration");
 })
+

@@ -15,10 +15,10 @@ body, button {
     border-width: 0px;
     padding: 10px;
 }
-#buttonProducts:hover, #buttonEmployee:hover {
+#buttonProducts:hover, #buttonEmployee:hover, #btnAddProduct:hover {
     background-color: rgb(151, 81, 151);
 }
-#buttonProducts:active, #buttonEmployee:active {
+#buttonProducts:active, #buttonEmployee:active, #btnAddProduct:active {
     background-color: rgb(94, 52, 94);
 }
 #appName, #role {
@@ -55,6 +55,10 @@ body, button {
     display: inline;
     padding: 9%
 }
+#products * {
+    display: inline;
+    padding: 9%;
+}
 #name_employee, #post_employee {
     display: inline;
     padding: 18%;
@@ -65,16 +69,40 @@ body, button {
     border-color: aliceblue;
     border-width: 1px;
 }
-#add_employee, #delete_employee {
+#add_employee, #delete_employee, #btnAddProduct, #addButtonProduct, #deleteButtonProduct {
     background-color: rgb(88, 0, 88);
     border-radius: 5px;
     border-width: 0px;
     padding:5px;
     margin-right: 0px;
 }
-#add_employee:hover, #delete_employee:hover {
+#add_employee:hover, #delete_employee:hover, #btnAddProduct:hover, #addButtonProduct:hover, #deleteButtonProduct:hover {
     background-color: rgb(151, 81, 151);
 }
-#add_employee:active, #delete_employee:active {
+#add_employee:active, #delete_employee:active, #btnAddProduct:active, #addButtonProduct:active, #deleteButtonProduct:active {
     background-color: rgb(94, 52, 94);
+}
+#addProduct {
+    background-color:rgb(61, 15, 61);
+    border-color: aliceblue;
+}
+#addProduct * {
+    color: rgb(238, 238, 238);
+}
+input {
+    background-color: rgb(88, 0, 88);
+    border-color: black;
+    border-radius: 10px;
+    height: 20px;
+    align-content: center;
+    color: white;
+    display: block;
+    margin: auto;
+}
+input:hover {
+    border-color:rgb(189, 196, 202)
+}
+input:focus {
+    outline: none;
+    border-color: aliceblue;
 }

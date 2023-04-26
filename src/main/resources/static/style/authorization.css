@@ -51,7 +51,7 @@ button:hover {
 button:active {
     background-color: rgb(94, 52, 94);
 }
-input {
+input, #selectRole {
     background-color: rgb(88, 0, 88);
     border-color: black;
     border-radius: 10px;
