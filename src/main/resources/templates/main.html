@@ -7,7 +7,31 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <title>SNS Store</title>
 </head>
 <body>
-  <dialog id="addProduct" close>
+  <dialog id="editEmployee">
+    <legend>Sign up in SNS</legend>
+    <p>Login</p>
+    <input id="reg_login" type="text" name="username">
+    <p>Email</p>
+    <input id="reg_email" type="text" name="email">
+    <p>Phone number</p>
+    <input id="reg_phone" type="text" name="phone">
+    <p>Password</p>
+    <input id="reg_password" type="password" name="password">
+    <p>Repeat password</p>
+    <input id="reg_rep_password" type="password" name="passwordRep">
+    <br>
+    <select name="" id="selectRole">
+        <option value="manager">Менеджер</option>
+        <option value="develop">Разработчик</option>
+        <option value="admin">Админ</option>
+    </select>
+    <h1 id="reg_error"></h1>
+    <p>
+    <button id="addEmployee" type="submit">Добавить</button>
+    <button id="deleteEmployee" type="button">Удалить</button>
+    </p>
+  </dialog>
+  <dialog id="editProduct" close>
     <legend>Products</legend>
     <p>Название</p>
     <input id="nameProduct" type="text">
@@ -45,7 +69,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
         <h3 id="category">Категория</h3>
         <h3 id="price">Цена</h3>
         <h3 id="amount">Количество</h3>
-        <button id="btnAddProduct" type="button" onclick="window.addProduct.showModal();">+</button>
+        <button id="editProductBtn" type="button" onclick="window.editProduct.showModal();">Edit</button>
       </div>
       <div id="products">
       </div>
@@ -54,8 +78,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
       <div id="panel_employee">
         <h3 id="name_employee">ФИО</h3>
         <h3 id="post_employee">Должность</h3>
-        <button type="button" id="add_employee"><h3>Добавить</h3></button>
-        <button type="button" id="delete_employee"><h3>Удалить</button>
+        <button id="editEmployeeBtn" type="button" onclick="window.editEmployee.showModal();">Edit</button>
       </div>
     </div>
     <script th:src="@{/scripts/main.js}"></script>

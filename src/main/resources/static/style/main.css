@@ -69,27 +69,30 @@ body, button {
     border-color: aliceblue;
     border-width: 1px;
 }
-#add_employee, #delete_employee, #btnAddProduct, #addButtonProduct, #deleteButtonProduct {
+#add_employee, #delete_employee, #editProductBtn, #addButtonProduct, #deleteButtonProduct,
+#editEmployeeBtn, #addEmployee, #deleteEmployee {
     background-color: rgb(88, 0, 88);
     border-radius: 5px;
     border-width: 0px;
     padding:5px;
     margin-right: 0px;
 }
-#add_employee:hover, #delete_employee:hover, #btnAddProduct:hover, #addButtonProduct:hover, #deleteButtonProduct:hover {
+#add_employee:hover, #delete_employee:hover, #editProductBtn:hover, #addButtonProduct:hover, #deleteButtonProduct:hover,
+#editEmployeeBtn:hover, #addEmployee:hover, #deleteEmployee:hover {
     background-color: rgb(151, 81, 151);
 }
-#add_employee:active, #delete_employee:active, #btnAddProduct:active, #addButtonProduct:active, #deleteButtonProduct:active {
+#add_employee:active, #delete_employee:active, #editProductBtn:active, #addButtonProduct:active, #deleteButtonProduct:active, 
+#editEmployeeBtn:active, #addEmployee:active, #deleteEmployee:active {
     background-color: rgb(94, 52, 94);
 }
-#addProduct {
+#editProduct, #editEmployee {
     background-color:rgb(61, 15, 61);
     border-color: aliceblue;
 }
-#addProduct * {
+#editProduct *, #editEmployee {
     color: rgb(238, 238, 238);
 }
-input {
+input, select {
     background-color: rgb(88, 0, 88);
     border-color: black;
     border-radius: 10px;

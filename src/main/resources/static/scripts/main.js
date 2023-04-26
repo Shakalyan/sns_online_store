@@ -1,8 +1,6 @@
 const listenerAllButton = {
     buttonProducts: document.querySelector("#buttonProducts"),
-    buttonEmployee: document.querySelector("#buttonEmployee"),
-    addEmployee: document.querySelector("#add_employee"),
-    deleteEmployee: document.querySelector("#delete_employee")
+    buttonEmployee: document.querySelector("#buttonEmployee")
 }
 
 const forms = {
@@ -21,7 +19,4 @@ listenerAllButton.buttonProducts.addEventListener("click", function() {
     document.getElementById(forms.employeeForm.id).hidden = true;
 })
 
-listenerAllButton.addEmployee.addEventListener("click", function() {
-    window.location.replace("auth/registration");
-})
 
