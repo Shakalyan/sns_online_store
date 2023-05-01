@@ -7,31 +7,31 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <title>SNS Store</title>
 </head>
 <body>
-  <dialog id="editEmployee">
+  <dialog id="addEmployee">
     <legend>Sign up in SNS</legend>
     <p>Login</p>
     <input id="reg_login" type="text" name="username">
+    <p>Full Name</p>
+    <input id="reg_name" type="text" name="name">
     <p>Email</p>
     <input id="reg_email" type="text" name="email">
     <p>Phone number</p>
     <input id="reg_phone" type="text" name="phone">
     <p>Password</p>
     <input id="reg_password" type="password" name="password">
-    <p>Repeat password</p>
-    <input id="reg_rep_password" type="password" name="passwordRep">
     <br>
     <select name="" id="selectRole">
-        <option value="manager">Менеджер</option>
-        <option value="develop">Разработчик</option>
-        <option value="admin">Админ</option>
+        <option value="ROLE_MANAGER">Менеджер</option>
+        <option value="ROLE_DEV">Разработчик</option>
+        <option value="ROLE_ADMIN">Админ</option>
     </select>
     <h1 id="reg_error"></h1>
     <p>
-    <button id="addEmployee" type="submit">Добавить</button>
-    <button id="deleteEmployee" type="button">Удалить</button>
+    <button id="addButtonEmployee" type="submit">Добавить</button>
+    <button id="backBtnEmployee" type="button" onclick="window.addEmployee.close();">Назад</button>
     </p>
   </dialog>
-  <dialog id="editProduct" close>
+  <dialog id="addProduct">
     <legend>Products</legend>
     <p>Название</p>
     <input id="nameProduct" type="text">
@@ -44,10 +44,27 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <p>Количество</p>
     <input id="amountProduct" type="text">
     <br>
-    <h1 id="reg_error"></h1>
     <p>
     <button id="addButtonProduct" type="submit">Добавить</button>
-    <button id="deleteButtonProduct" type="button">Удалить</button>
+    <button id="backBtnProduct" type="button" onclick="window.addProduct.close();">Назад</button>
+    </p>
+  </dialog>
+  <dialog id="editProduct">
+    <legend>Products</legend>
+    <p>Название</p>
+    <input id="nameProductEdit" type="text">
+    <p>Производитель</p>
+    <input id="manufacturerProductEdit" type="text">
+    <p>Категория</p>
+    <input id="categoryEdit" type="text">
+    <p>Цена</p>
+    <input id="priceProductEdit" type="text">
+    <p>Количество</p>
+    <input id="amountProductEdit" type="text">
+    <br>
+    <p>
+    <button id="editButtonProduct" type="submit">Изменить</button>
+    <button id="backBtnProduct" type="button" onclick="window.editProduct.close();">Назад</button>
     </p>
   </dialog>
   <form class="background">
@@ -69,19 +86,18 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
         <h3 id="category">Категория</h3>
         <h3 id="price">Цена</h3>
         <h3 id="amount">Количество</h3>
-        <button id="editProductBtn" type="button" onclick="window.editProduct.showModal();">Edit</button>
-      </div>
-      <div id="products">
+        <button id="addProductBtn" type="button" onclick="window.addProduct.showModal();">+</button>
       </div>
     </div>
     <div id="list_employee" hidden>
       <div id="panel_employee">
         <h3 id="name_employee">ФИО</h3>
         <h3 id="post_employee">Должность</h3>
-        <button id="editEmployeeBtn" type="button" onclick="window.editEmployee.showModal();">Edit</button>
+        <button id="addEmployeeBtn" type="button" onclick="window.addEmployee.showModal();">+</button>
       </div>
     </div>
     <script th:src="@{/scripts/main.js}"></script>
+    <script th:src="@{/scripts/dataController.js}"></script>
   </form>
 </body>
 </html>

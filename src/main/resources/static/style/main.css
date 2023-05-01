@@ -51,13 +51,9 @@ body, button {
     border-width: 1px;
     height: 5%;
 }
-#panel_products * {
+#panel_products h3 {
     display: inline;
     padding: 9%
-}
-#products * {
-    display: inline;
-    padding: 9%;
 }
 #name_employee, #post_employee {
     display: inline;
@@ -69,27 +65,20 @@ body, button {
     border-color: aliceblue;
     border-width: 1px;
 }
-#add_employee, #delete_employee, #editProductBtn, #addButtonProduct, #deleteButtonProduct,
-#editEmployeeBtn, #addEmployee, #deleteEmployee {
+button {
     background-color: rgb(88, 0, 88);
-    border-radius: 5px;
-    border-width: 0px;
-    padding:5px;
-    margin-right: 0px;
 }
-#add_employee:hover, #delete_employee:hover, #editProductBtn:hover, #addButtonProduct:hover, #deleteButtonProduct:hover,
-#editEmployeeBtn:hover, #addEmployee:hover, #deleteEmployee:hover {
+button:hover {
     background-color: rgb(151, 81, 151);
 }
-#add_employee:active, #delete_employee:active, #editProductBtn:active, #addButtonProduct:active, #deleteButtonProduct:active, 
-#editEmployeeBtn:active, #addEmployee:active, #deleteEmployee:active {
+button:active {
     background-color: rgb(94, 52, 94);
 }
-#editProduct, #editEmployee {
+#addProduct, #addEmployee {
     background-color:rgb(61, 15, 61);
     border-color: aliceblue;
 }
-#editProduct *, #editEmployee {
+#addProduct, #addEmployee {
     color: rgb(238, 238, 238);
 }
 input, select {
@@ -109,3 +98,11 @@ input:focus {
     outline: none;
     border-color: aliceblue;
 }
+#itemEmployee h3 {
+    display: inline;
+    padding: 16%;
+}
+#itemProducts h3 {
+    display: inline;
+    padding: 9%;
+ }

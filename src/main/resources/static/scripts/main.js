@@ -5,8 +5,7 @@ const listenerAllButton = {
 
 const forms = {
     productsForm: document.querySelector("#list_products"),
-    employeeForm: document.querySelector("#list_employee"),
-    productsList: document.querySelector("#products")
+    employeeForm: document.querySelector("#list_employee")
 }
 
 listenerAllButton.buttonEmployee.addEventListener("click", function() {

@@ -18,7 +18,7 @@ services:
     image: mongo:6.0
     container_name: sns_online_store_mongo
     environment:
-      MONGO_INITDB_DATABASE: sns_online_store
+#      MONGO_INITDB_DATABASE: sns_online_store
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admSN0S
     volumes:
