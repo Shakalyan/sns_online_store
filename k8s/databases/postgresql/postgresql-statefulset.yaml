@@ -19,7 +19,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: postgresql
-        image: postgres:15.2
+        image: shakalyan/sns_postgres:0.1
         env:
         - name: POSTGRES_DB
           value: "sns_online_store"

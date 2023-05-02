@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  labels:
+    app: sns_online_store
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sns_online_store
+  template:
+    metadata:
+      name: app-replica
+      labels:
+        app: sns_online_store
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: app
+        image: shakalyan/sns_online_store:0.2
+        imagePullPolicy: Always
+        env:
+        - name: MONGO_URL
+          value: "mongodb://mongos-service:27017/sns_online_store"
+        - name: POSTGRES_URL
+          value: "jdbc:postgresql://postgresql-service:5432/sns_online_store"
+        - name: POSTGRES_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: postgresql-secret
+              key: username
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgresql-secret
+              key: password
+        ports:
+        - containerPort: 8080

@@ -19,7 +19,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: mongodb
-        image: mongo:6.0.5
+        image: shakalyan/sns_mongo:0.1
         env:
         - name: MONGO_INITDB_DATABASE
           value: "sns_online_store"

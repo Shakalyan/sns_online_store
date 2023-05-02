@@ -1,7 +1,8 @@
-const apiEmployeesUrl = "http://localhost:8080/api/employees";
-const apiProductsUrl = "http://localhost:8080/api/products";
-const apiGetProduct = "http://localhost:8080/api/product";
-const apiRegUser = "http://localhost:8080/api/registration";
+const apiHost = 'http://192.168.76.2:31364/'
+const apiEmployeesUrl = `${apiHost}api/employees`;
+const apiProductsUrl = `${apiHost}api/products`;
+const apiGetProduct = `${apiHost}api/product`;
+const apiRegUser = `${apiHost}api/registration`;
 const xhr = new XMLHttpRequest();
 const divElements = {
     divEmployees: document.querySelector("#list_employee"),
