@@ -76,8 +76,8 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
         <h2 id="role" sec:authorize="hasRole('ROLE_DEV')">Должность: Разработчик</h2>
       </div>
       <div id="panel">
-        <button type="button" id="buttonProducts"><h2>Товары</h2></button>
-        <button type="button" id="buttonEmployee"><h2>Сотрудники</h2></button>
+        <button type="button" id="buttonProducts" sec:authorize="hasRole('ROLE_MANAGER')"><h2>Товары</h2></button>
+        <button type="button" id="buttonEmployee" sec:authorize="hasRole('ROLE_ADMIN')"><h2>Сотрудники</h2></button>
       </div>
     </div>
     <div id="list_products">
